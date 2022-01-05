@@ -3,6 +3,11 @@ package controller;
 
 import java.util.List;
 
+/**
+* Representa o usuário aluno;
+* Possui única finalidade de consultar as notas de suas disciplinas através do método exibirnotas();
+* As notas são inseridas pelo usário professor através do método setNotas(List notas);
+*/
 
 public class Aluno extends Pessoa {
 
