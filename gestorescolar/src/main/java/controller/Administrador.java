@@ -5,6 +5,8 @@
  */
 package controller;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Rubeus
@@ -12,14 +14,12 @@ package controller;
 public class Administrador {
     private String senha;
     private String login;
-    private Aluno alunos; 
-    private Professor professores;
+    protected static ArrayList <Aluno> alunos;
+    protected static ArrayList <Professor> professores;
 
-    public Administrador(String senha, String login, Aluno alunos, Professor professores) {
+    public Administrador(String senha, String login) {
         this.senha = senha;
         this.login = login;
-        this.alunos = alunos;
-        this.professores = professores;
     }
 
     public Administrador() {
@@ -41,21 +41,21 @@ public class Administrador {
         this.login = login;
     }
 
-    public Aluno getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(Aluno alunos) {
-        this.alunos = alunos;
-    }
-
-    public Professor getProfessores() {
-        return professores;
-    }
-
-    public void setProfessores(Professor professores) {
-        this.professores = professores;
-    }
+//    public Aluno getAlunos() {
+//        return alunos;
+//    }
+//
+//    public void setAlunos(Aluno alunos) {
+//        this.alunos = alunos;
+//    }
+//
+//    public Professor getProfessores() {
+//        return professores;
+//    }
+//
+//    public void setProfessores(Professor professores) {
+//        this.professores = professores;
+//    }
     
     public void cadastraAluno(){
     

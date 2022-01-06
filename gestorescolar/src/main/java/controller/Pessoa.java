@@ -1,6 +1,8 @@
 
 package controller;
 
+import com.google.gson.Gson;
+
 
 public class Pessoa {
     private String senha;
@@ -58,5 +60,13 @@ public class Pessoa {
     }
 
     public Pessoa() {
+        
+    }
+    
+    public static Pessoa toPessoa(String conteudo) {
+        Gson gson = new Gson();
+        Pessoa pessoa = gson.fromJson(conteudo, Pessoa.class);
+
+        return pessoa;
     }
 }
