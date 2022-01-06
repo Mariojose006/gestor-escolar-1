@@ -1,7 +1,11 @@
 
 package controller;
 
-
+/**
+* Representa uma disciplina cadastrada em qualquer turma da escola; 
+* Parâmetros são preenchidos exclusivamente pelo administrador atráves do método
+* cadastrarDisciplinar();
+*/
 public class Disciplina {
     private String nome;
     private String sala;

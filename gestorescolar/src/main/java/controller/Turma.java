@@ -1,6 +1,11 @@
 
 package controller;
 
+/**
+* Representa uma turma da escola;
+* Contém uma lista de alunos cadastrados pelo Administrador;
+*/
+
 public class Turma {
     private String nome;
     private Aluno alunos;

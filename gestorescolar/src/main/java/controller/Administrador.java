@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import java.util.ArrayList;
@@ -11,6 +7,12 @@ import java.util.ArrayList;
  *
  * @author Rubeus
  */
+
+/**
+* Representa o administrador geral do sistema;
+* Responsável por criar as turmas e cadastrar suas disciplinas, cadastrar os professores de
+* determinada disciplina e inserir os alunos nas turmas atráves de seus respectivos métodos;                           
+*/
 public class Administrador {
     private String senha;
     private String login;
