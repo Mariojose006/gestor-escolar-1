@@ -1,6 +1,6 @@
 /*
-    Adrian Machado -     
-    André Reis - 201965511B
+    Adrian Machado - 201965001AB
+    André Reis - 
     Mário José - 201965507B
 
 */ 
