@@ -2,6 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+ /*
+    Adrian Machado -     
+    André Reis - 
+    Mário José - 201965507B
+
+*/ 
 package model;
 
 import java.io.BufferedWriter;
@@ -10,10 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-/**
- *
- * @author adria
- */
+
 public class Files {
    //leitura
    public static ArrayList read(String path){

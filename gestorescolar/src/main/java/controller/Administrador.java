@@ -1,12 +1,13 @@
+/*
+    Adrian Machado -     
+    André Reis - 
+    Mário José - 201965507B
 
+*/ 
 package controller;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Rubeus
- */
 
 /**
 * Representa o administrador geral do sistema;

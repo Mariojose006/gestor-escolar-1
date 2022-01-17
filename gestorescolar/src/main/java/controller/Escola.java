@@ -1,4 +1,9 @@
+/*
+    Adrian Machado -     
+    André Reis - 
+    Mário José - 201965507B
 
+*/ 
 package controller;
 /**
 * Representa a escola em que o sistema foi implementado;
