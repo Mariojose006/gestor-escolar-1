@@ -9,8 +9,54 @@
 
 */ 
 package model;
-
+import com.google.gson.Gson;
+import controller.Administrador;
+import controller.Aluno;
+import controller.Disciplina;
+import controller.Professor;
+import controller.Turma;
 
 public class Json {
+    Gson gson = new Gson();
+    //ADM
+    public String AdmToJson(Administrador adm){
+        return gson.toJson(adm);
+    }
+    public Administrador jsonToAdm(String json){
+        Administrador adm = gson.fromJson(json, Administrador.class);
+        return adm;
+    }
+    //Aluno
+    public String AlunoToJson(Aluno aluno){
+        return gson.toJson(aluno);
+    }
+    public Aluno jsonToAluno(String json){
+        Aluno aln = gson.fromJson(json, Aluno.class);
+        return aln;
+    }
+    //Disciplina
+    public String DisciplinaToJson(Disciplina disciplina){
+        return gson.toJson(disciplina);
+    }
+    public Disciplina jsonToDisciplina(String json){
+        Disciplina disc = gson.fromJson(json, Disciplina.class);
+        return disc;
+    }
+    //Professor
+    public String ProfessorToJson(Professor professor){
+        return gson.toJson(professor);
+    }
+    public Professor jsonToProf(String json){
+        Professor prof = gson.fromJson(json, Professor.class);
+        return prof;
+    }
+    //Turma
+    public String turmaToJson(Turma turma){
+        return gson.toJson(turma);
+    }
+    public Turma jsonToTurma(String json){
+        Turma turma = gson.fromJson(json, Turma.class);
+        return turma;
+    }
     
 }
