@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class Administrador {
     private String senha;
     private String login;
-    protected static ArrayList <Aluno> alunos;
-    protected static ArrayList <Professor> professores;
+    //protected static ArrayList <Aluno> alunos;
+    //protected static ArrayList <Professor> professores;
 
     public Administrador(String senha, String login) {
         this.senha = senha;
@@ -43,23 +43,6 @@ public class Administrador {
     public void setLogin(String login) {
         this.login = login;
     }
-
-    public Aluno getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(Aluno alunos) {
-        this.alunos = alunos;
-    }
-
-    public Professor getProfessores() {
-        return professores;
-    }
-
-    public void setProfessores(Professor professores) {
-       this.professores = professores;
-    }
-    
     public void cadastraAluno(){
     
     }

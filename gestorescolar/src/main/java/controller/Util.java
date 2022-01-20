@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
-    Adrian Machado - 201965001AB
-    André Reis - 201965511B
+ /*
+    Adrian Machado -  201965001AB   
+    André Reis - 
     Mário José - 201965507B
 
-*/  
+*/ 
 package controller;
 
 import java.util.ArrayList;
@@ -25,14 +25,11 @@ public class Util {
         
         ArrayList<String> administrador = new ArrayList<String>();
         administrador.addAll(model.Files.read("./dadosAdministrador.txt"));
-        
         // contatenar as 3 listas em uma lista só
         ArrayList<String> usuarios = new ArrayList<String>();
         usuarios.addAll(alunos);
         usuarios.addAll(professores);
         usuarios.addAll(administrador);
-        
-        
         // percorrer a lista e comparar login e senha
         // ALUNO == ALN // PROFESSOR = PRF // Administrador == ADM
         
