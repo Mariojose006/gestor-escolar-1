@@ -16,10 +16,7 @@ import java.util.List;
 
 public class Aluno extends Pessoa {
 
-    private List notas; 
-
-   
-    
+    private List notas;  
     public Aluno(String senha, String login, String cpf, String nome, String telefone) {
         super(senha, login, cpf, nome, telefone);
     }

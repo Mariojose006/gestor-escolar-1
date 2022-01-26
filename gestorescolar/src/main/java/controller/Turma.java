@@ -6,6 +6,10 @@
 */ 
 package controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
 * Representa uma turma da escola;
 * Contém uma lista de alunos cadastrados pelo Administrador;
@@ -13,11 +17,13 @@ package controller;
 
 public class Turma {
     private String nome;
-    private Aluno alunos;
+    private ArrayList<Aluno> alunos;
+    private Professor professor;
+    private Disciplina disciplina;
+    //Map<Aluno,ArrayList<Integer>> notas = new HashMap<Aluno,ArrayList<Integer>>();
 
-    public Turma(String nome, Aluno alunos) {
+    public Turma(String nome) {
         this.nome = nome;
-        this.alunos = alunos;
     }
 
     public Turma() {
@@ -26,18 +32,20 @@ public class Turma {
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public Aluno getAlunos() {
-        return alunos;
+    public void addAluno(Aluno aluno){
+        alunos.add(aluno);
+    }
+    public void setAlunos(ArrayList<Aluno> alunoss){
+        this.alunos = alunoss;
+    }
+    public void setProfessor(Professor prof){
+        this.professor = prof;
+    }
+    public void setDisciplina(Disciplina disciplina){
+        this.disciplina = disciplina;
     }
 
-    public void setAlunos(Aluno alunos) {
-        this.alunos = alunos;
-    }
-    
-    
 }
