@@ -1,0 +1,17 @@
+controller\Util.class
+sdk\gestorescolar\GestorEscolar.class
+controller\notas\Soma.class
+controller\Pessoa.class
+model\Json.class
+controller\Administrador.class
+controller\Turma.class
+controller\Aluno.class
+controller\Professor.class
+controller\Escola.class
+model\Login$2.class
+controller\Main.class
+model\Login.class
+controller\Disciplina.class
+controller\notas\MediaSimples.class
+model\Login$1.class
+controller\notas\CalculaNota.class

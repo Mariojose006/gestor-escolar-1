@@ -16,7 +16,7 @@ public class Pessoa {
     private String cpf;
     private String nome;
     private String telefone;
-    private int tipoUsuário;
+    private int tipoUsuario;
     
     public String getSenha() {
         return senha;
@@ -67,21 +67,21 @@ public class Pessoa {
     }
 
     public int getTipoUsuário() {
-        return tipoUsuário;
+        return tipoUsuario;
     }
 
-    public void setTipoUsuário(int tipoUsuário) {
-        this.tipoUsuário = tipoUsuário;
+    public void setTipoUsuário(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
-    public Pessoa(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuário) {
+    public Pessoa(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario) {
         this.id = id;
         this.senha = senha;
         this.login = login;
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
-        this.tipoUsuário = tipoUsuário;
+        this.tipoUsuario = tipoUsuario;
     }
     
     

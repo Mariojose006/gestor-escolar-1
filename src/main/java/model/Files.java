@@ -6,7 +6,6 @@
     Adrian Machado - 201965001AB
     André Reis - 201965511B
     Mário José - 201965507B
-
 */ 
 package model;
 
@@ -26,6 +25,7 @@ public class Files {
        Scanner reader =null; //new Scanner(file);
        
        if(file.canRead()){
+          // linesFile.add((reader.nextLine()));
            while (reader.hasNextLine()) {              
               // conteudo.append(leitor.nextLine()).append("\r\n");
               linesFile.add((reader.nextLine()));

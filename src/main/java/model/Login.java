@@ -5,17 +5,18 @@
  */
 package model;
 
-/**
- *
- * @author Rubeus
- */
-public class Login extends javax.swing.JFrame {
+import controller.Aluno;
+import controller.Professor;
+import java.util.ArrayList;
 
-    /**
-     * Creates new form Login
-     */
+
+public class Login extends javax.swing.JFrame {
+    
+        
     public Login() {
         initComponents();
+        
+         
     }
 
     /**
@@ -121,6 +122,11 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
+        
+        
+       
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

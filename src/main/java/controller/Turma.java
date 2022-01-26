@@ -19,16 +19,13 @@ public class Turma {
     private ArrayList<Aluno> alunos;
     private Professor professor;
     private Disciplina disciplina;
+    private int maxAlunos = 35;
     //Map<Aluno,ArrayList<Integer>> notas = new HashMap<Aluno,ArrayList<Integer>>();
-    int cod;
-
     public Turma(String nome) {
         this.nome = nome;
     }
-
     public Turma() {
     }
-
     public String getNome() {
         return nome;
     }
@@ -41,11 +38,27 @@ public class Turma {
     public void setAlunos(ArrayList<Aluno> alunoss){
         this.alunos = alunoss;
     }
+    public Aluno getIndexAlunos(int i){
+        return alunos.get(i);
+    }
     public void setProfessor(Professor prof){
         this.professor = prof;
+    }
+    public Professor getProfessor(){
+        return professor;
     }
     public void setDisciplina(Disciplina disciplina){
         this.disciplina = disciplina;
     }
+    public Disciplina setDisciplina(){
+        return disciplina;
+    }
+    public int getMaxAlunos() {
+        return maxAlunos;
+    }
+    public void setMaxAlunos(int maxAlunos) {
+        this.maxAlunos = maxAlunos;
+    }
 
+        
 }

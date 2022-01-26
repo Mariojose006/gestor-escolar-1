@@ -13,8 +13,8 @@ package controller;
 
 public class Professor extends Pessoa {
 
-    public Professor(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuário) {
-        super(id, senha, login, cpf, nome, telefone, tipoUsuário);
+    public Professor(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario) {
+        super(id, senha, login, cpf, nome, telefone, tipoUsuario);
     }
 
     

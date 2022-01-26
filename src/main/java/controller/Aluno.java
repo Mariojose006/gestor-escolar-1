@@ -21,12 +21,9 @@ public class Aluno extends Pessoa {
 
    
 
-    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuário) {
-        super(id, senha, login, cpf, nome, telefone, tipoUsuário);
-    }
-
-   
-    
+    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario) {
+        super(id, senha, login, cpf, nome, telefone, tipoUsuario);
+    }   
    
 
     public Aluno() {
