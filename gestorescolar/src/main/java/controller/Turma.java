@@ -21,6 +21,7 @@ public class Turma {
     private Professor professor;
     private Disciplina disciplina;
     //Map<Aluno,ArrayList<Integer>> notas = new HashMap<Aluno,ArrayList<Integer>>();
+    int cod;
 
     public Turma(String nome) {
         this.nome = nome;
