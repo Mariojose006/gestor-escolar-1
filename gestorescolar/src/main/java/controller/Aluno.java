@@ -6,6 +6,7 @@
 */ 
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,21 +17,29 @@ import java.util.List;
 
 public class Aluno extends Pessoa {
 
-    private List notas;  
-    public Aluno(String senha, String login, String cpf, String nome, String telefone) {
-        super(senha, login, cpf, nome, telefone);
+    private ArrayList<Float> notas; 
+
+   
+
+    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuário) {
+        super(id, senha, login, cpf, nome, telefone, tipoUsuário);
     }
+
+   
+    
+   
 
     public Aluno() {
     }
-    
-     public List getNotas() {
+    public ArrayList<Float> getNotas() {
         return notas;
     }
 
-    public void setNotas(List notas) {
-        this.notas = notas;
+    public void setNotas(Float nota) {
+        notas.add(nota);
+        
     }
+   
     
     public void ExibeNotas(){
     

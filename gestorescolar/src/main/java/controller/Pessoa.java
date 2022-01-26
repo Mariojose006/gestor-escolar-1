@@ -10,12 +10,14 @@ import com.google.gson.Gson;
 
 
 public class Pessoa {
+    private int id;
     private String senha;
     private String login; 
     private String cpf;
     private String nome;
     private String telefone;
-
+    private int tipoUsuário;
+    
     public String getSenha() {
         return senha;
     }
@@ -56,13 +58,33 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public Pessoa(String senha, String login, String cpf, String nome, String telefone) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTipoUsuário() {
+        return tipoUsuário;
+    }
+
+    public void setTipoUsuário(int tipoUsuário) {
+        this.tipoUsuário = tipoUsuário;
+    }
+
+    public Pessoa(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuário) {
+        this.id = id;
         this.senha = senha;
         this.login = login;
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
+        this.tipoUsuário = tipoUsuário;
     }
+    
+    
 
     public Pessoa() {
         

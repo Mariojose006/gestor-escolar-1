@@ -2,7 +2,6 @@
     Adrian Machado - 201965001AB
     André Reis - 201965511B
     Mário José - 201965507B
-
 */ 
 package controller;
 import java.util.ArrayList;
@@ -36,9 +35,6 @@ public class Main {
         turmaOO.setAlunos(alunos);
         turmaOO.setDisciplina(disciplina);
         turmaOO.setProfessor(prof);
-
-        Map<Aluno,ArrayList<Integer>> notas = new HashMap<Aluno,ArrayList<Integer>>();
-        notas.put(aluno1, value)
         
         String turmaOOjson = json.turmaToJson(turmaOO);
         System.out.println(turmaOOjson);

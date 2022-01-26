@@ -2,7 +2,6 @@
     Adrian Machado - 201965001AB
     André Reis - 201965511B
     Mário José - 201965507B
-
 */ 
 package controller;
 
@@ -21,6 +20,7 @@ public class Turma {
     private Professor professor;
     private Disciplina disciplina;
     //Map<Aluno,ArrayList<Integer>> notas = new HashMap<Aluno,ArrayList<Integer>>();
+    int cod;
 
     public Turma(String nome) {
         this.nome = nome;
