@@ -59,6 +59,14 @@ public class Turma {
     public void setMaxAlunos(int maxAlunos) {
         this.maxAlunos = maxAlunos;
     }
+    public ArrayList<Aluno> getAlunos(){
+        return alunos;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+    
 
         
 }
