@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class Turma {
     private String nome;
-    private ArrayList<Aluno> alunos;
+    private ArrayList<Aluno> alunos = new ArrayList<>();
     private Professor professor;
     private Disciplina disciplina;
     private int maxAlunos = 35;

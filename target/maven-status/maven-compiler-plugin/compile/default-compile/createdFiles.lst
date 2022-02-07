@@ -6,12 +6,17 @@ model\Json.class
 controller\Administrador.class
 controller\Turma.class
 controller\Aluno.class
+view\adm\AdmInicial$2.class
 controller\Professor.class
 controller\Escola.class
+view\adm\AdmInicial$1.class
 model\Login$2.class
 controller\Main.class
 model\Login.class
+model\Files.class
 controller\Disciplina.class
 controller\notas\MediaSimples.class
 model\Login$1.class
+model\arquivos.class
+view\adm\AdmInicial.class
 controller\notas\CalculaNota.class
