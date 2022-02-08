@@ -21,6 +21,7 @@ public class Json {
     //ADM
     public String AdmToJson(Administrador adm){
         return gson.toJson(adm);
+        
     }
     public Administrador jsonToAdm(String json){
         Administrador adm = gson.fromJson(json, Administrador.class);

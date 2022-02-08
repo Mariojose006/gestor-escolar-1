@@ -13,7 +13,7 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
           Json json = new Json();
-          String pathArquivoJson = "C:\\Users\\adria\\OneDrive\\Documents\\UFJF\\gestor-escolar\\src\\main\\java\\model\\turmas.json";
+          String pathArquivoJson = "src\\main\\java\\model\\turmas.json";
 //          ArrayList<Turma> turmas = new ArrayList<>();
 //          Faker faker = new Faker(new Locale("pt-BR"));
 //          for(int i = 0;i<100;i++){
@@ -30,7 +30,7 @@ public class Main {
 //          for(Turma turma: turmas){
 //              Files.write(pathArquivoJson, json.turmaToJson(turma));
 //          }
-    
+            
             Escola escola = new Escola();
             escola.ler(pathArquivoJson);
             System.out.println("Quantidade alunos: " + escola.alunos.size());

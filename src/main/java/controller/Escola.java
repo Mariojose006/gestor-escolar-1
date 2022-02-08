@@ -34,6 +34,9 @@ public class Escola {
     public void adicionaDisciplina(Disciplina disciplina){
         disciplinas.add(disciplina);
     }
+//    public void buscarAlunoDisciplina(Disciplina disciplina){
+//        
+//    }
     public void ler(String path)
     {
         ArrayList<String> dadosStringLinhaJson = new ArrayList<>();
