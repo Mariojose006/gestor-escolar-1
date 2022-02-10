@@ -4,16 +4,17 @@
  */
 package model.TabelModels;
 
+import controller.Aluno;
+import controller.Escola;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author adria
- */
-public class ProfNotasAlunosTableModel extends AbstractTableModel{
-    //private List<Produto> dados = new ArrayList<>();
-    private String[] colunas = {"Descrição","QTD","Valor"};
 
+public class ProfNotasAlunosTableModel extends AbstractTableModel{
+    private List<Aluno> dados = new ArrayList<>();    
+    private String[] colunas = {"AV1","AV2","AV3"};
+    
     @Override
     public String getColumnName(int column) {
         return colunas[column]; //To change body of generated methods, choose Tools | Templates.
@@ -34,7 +35,8 @@ public class ProfNotasAlunosTableModel extends AbstractTableModel{
         
         switch(coluna){
             case 0:
-                //return dados.get(linha).getDescricao();
+                 return dados.get(linha).getNotas();
+                
             case 1:
                 //return dados.get(linha).getQtd();
             case 2: 
@@ -44,6 +46,11 @@ public class ProfNotasAlunosTableModel extends AbstractTableModel{
         return null;
         
     }
+
+    public carregaAlunos(){
+        dados.get(0).buscarTurmaProfessor(professor)
+    }
+    
     
 //    public void addRow(Produto p){
 //        this.dados.add(p);

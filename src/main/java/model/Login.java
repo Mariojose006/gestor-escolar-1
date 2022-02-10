@@ -11,6 +11,8 @@ import controller.Professor;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import view.adm.AdmInicial;
+import view.aluno.AlunoInicial;
+import view.professor.ProfInicial;
 
 
 public class Login extends javax.swing.JFrame {
@@ -108,32 +110,38 @@ public class Login extends javax.swing.JFrame {
         //apertou o login 1 carregar os arquivos 2 comparar o login 3 enviar para tela correta 
         Escola escola = new Escola();        
         escola.ler("src\\main\\java\\model\\turmas.json");
+        String login = inputLogin.getText();
+        String senha = inputSenha.getText();
         
-        if(inputLogin.getText() == "ADM" && inputSenha.getText() == "ADM")        
-        {              
-            for(Aluno aux:escola.alunos)
+        if(login.equals("ADM") && senha.equals("ADM"))        
+        {      
+             AdmInicial telaAdm = new AdmInicial();            
+             telaAdm.setVisible(true);
+            
+            
+        }else 
+        {   
+             for(Aluno aux:escola.alunos)
             {
                 if(aux.getLogin().equals(inputLogin.getText()) && aux.getSenha().equals(inputSenha.getText()))
                 {
-                   //exibir tela do aluno 
+                   AlunoInicial al = new AlunoInicial(); 
+                   al.setVisible(true); 
                 }else
                 {
                     for(Professor aux1:escola.professores)
                     {
                        if(aux1.getLogin().equals(inputLogin.getText()) && aux1.getSenha().equals(inputSenha.getText()))
                             {
-                               //exibir tela do professor 
+                               ProfInicial pf = new ProfInicial(); 
+                                pf.setVisible(true); 
                             } 
                     }
            
                 } 
-            }         
+            }
             
-            
-        }else 
-        {
-             AdmInicial telaAdm = new AdmInicial();            
-             telaAdm.setVisible(true);
+             
         }
               
         
