@@ -80,4 +80,28 @@ public class Escola {
             }
         }
     }
+    
+    public ArrayList turmasAlunoCursa(Aluno aluno){
+        ArrayList <Turma> turmasAux = new ArrayList<>();
+        for(Turma a: this.turmas){
+            if(a.getAlunos().contains(aluno)){
+                turmasAux.add(a);
+            }
+        }
+        return turmasAux;
+    }
+    public ArrayList alteraNota(Turma turma, Aluno aluno, Float nota1,Float nota2,Float nota3){
+       for(int i = 0; i< turmas.size();i++){
+           if(turmas.get(i).equals(turma)){
+               for(int j =0;i<turma.getAlunos().size();i++){
+                   if(turma.getAlunos().get(j).equals(aluno)){
+                       turmas.get(i).getAlunos().get(j).setNotas(nota1);
+                       turmas.get(i).getAlunos().get(j).setNotas(nota2);
+                       turmas.get(i).getAlunos().get(j).setNotas(nota3);
+                   }
+               }
+           }
+       }
+    }
+    
 }
