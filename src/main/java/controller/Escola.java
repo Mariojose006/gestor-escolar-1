@@ -11,7 +11,7 @@ import model.Files;
 import model.Json;
 
 
-/**
+/*
 * Representa a escola em que o sistema foi implementado;
 * Contem lista dos alunos e professores da escola cadastrados pelo administrador;
 */
@@ -34,9 +34,15 @@ public class Escola {
     public void adicionaDisciplina(Disciplina disciplina){
         disciplinas.add(disciplina);
     }
-//    public void buscarAlunoDisciplina(Disciplina disciplina){
-//        
-//    }
+    public ArrayList buscarTurmaProfessor(Professor professor){
+        ArrayList<Turma> turmaaux = new ArrayList<>();
+        for(Turma t: this.turmas){
+             if(t.getProfessor().getCpf().equals(professor.getCpf()) )
+             turmaaux.add(t);
+         }   
+         return turmaaux;
+    }
+   
     public void ler(String path)
     {
         ArrayList<String> dadosStringLinhaJson = new ArrayList<>();

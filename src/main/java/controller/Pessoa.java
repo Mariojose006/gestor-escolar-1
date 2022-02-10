@@ -7,6 +7,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import java.util.Objects;
 
 
 public class Pessoa {
@@ -96,4 +97,30 @@ public class Pessoa {
 
         return pessoa;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.cpf);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pessoa other = (Pessoa) obj;
+        if (!Objects.equals(this.cpf, other.cpf)) {
+            return false;
+        }
+        return true;
+    }
+    
 }
