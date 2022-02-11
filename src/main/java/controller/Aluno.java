@@ -17,22 +17,23 @@ import java.util.List;
 
 public class Aluno extends Pessoa {
 
-    private ArrayList<Float> notas; 
+    private ArrayList<String> notas; 
 
    
 
     public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario) {
         super(id, senha, login, cpf, nome, telefone, tipoUsuario);
+       
     }   
    
 
     public Aluno() {
     }
-    public ArrayList<Float> getNotas() {
+    public ArrayList<String> getNotas() {
         return notas;
     }
 
-    public void setNotas(Float nota) {
+    public void setNotas(String nota) {
         notas.add(nota);
         
     }

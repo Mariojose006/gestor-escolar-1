@@ -96,7 +96,7 @@ public class Escola {
         }
         return turmasAux;
     }
-    public ArrayList alteraNota(Turma turma, Aluno aluno, Float nota1,Float nota2,Float nota3){
+    public void alteraNota(Turma turma, Aluno aluno, String nota1,String nota2,String nota3){
        for(int i = 0; i< turmas.size();i++){
            if(turmas.get(i).equals(turma)){
                for(int j =0;i<turma.getAlunos().size();i++){
@@ -108,6 +108,20 @@ public class Escola {
                }
            }
        }
+    }
+    public ArrayList buscaNota(Turma turma, Aluno aluno){
+       ArrayList<String> notas = new ArrayList();
+        for(int i = 0; i< turmas.size();i++){
+           if(turmas.get(i).equals(turma)){
+               for(int j =0;i<turma.getAlunos().size();i++){
+                   if(turma.getAlunos().get(j).equals(aluno)){
+                       notas = turmas.get(i).getAlunos().get(j).getNotas();
+                       
+                   }
+               }
+           }
+       }
+       return notas;
     }
     
 }
