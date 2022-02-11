@@ -17,11 +17,11 @@ import java.util.List;
 
 public class Aluno extends Pessoa {
 
-    private ArrayList<String> notas; 
+    private ArrayList<String> notas = new ArrayList(); 
 
    
 
-    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario) {
+    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario,ArrayList<String> notas ) {
         super(id, senha, login, cpf, nome, telefone, tipoUsuario);
        
     }   
@@ -29,13 +29,24 @@ public class Aluno extends Pessoa {
 
     public Aluno() {
     }
+
+//    public ArrayList<String> getNotas() {
+//        return notas;
+//    }
+//
+//    
+//
+//    public void setNotas(ArrayList<String> nota) {
+//        notas = nota;
+//        
+//    }
+
     public ArrayList<String> getNotas() {
         return notas;
     }
 
-    public void setNotas(String nota) {
-        notas.add(nota);
-        
+    public void setNotas(ArrayList<String> notas) {
+        this.notas = notas;
     }
    
     

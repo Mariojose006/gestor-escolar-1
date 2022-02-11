@@ -201,21 +201,27 @@ public class ProfInicial extends javax.swing.JFrame {
 
     private void cbAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbAlunoFocusLost
         // TODO add your handling code here:
-        Escola es = new Escola();
+        Escola es = new Escola();       
         ArrayList <Turma> turmas = new ArrayList<>();
-        ArrayList <Float> notas = new ArrayList<>();
+        ArrayList <String> notas = new ArrayList<>();
+        
         for(Turma t: turmas){           
             if(t.getNome().equals(cbTurma.getSelectedItem())){
-                for(Aluno a: t.getAlunos()){                              
+                turmas.add(t);               
+                for(Aluno a: t.getAlunos()){                       
                     if(a.getCpf().equals(cbAluno.getSelectedItem()))
-                        notas = es.buscaNota(t, a);                   
+                        System.out.println(a.getCpf().equals(cbAluno.getSelectedItem()));
+
+                         notas.addAll(es.buscaNota(t, a));                   
                  }            
             }            
              
         }
-        AvUm.setToolTipText(String.valueOf(notas.get(0)));
-        AvDois.setToolTipText(String.valueOf(notas.get(1)));
-        AvTres.setToolTipText(String.valueOf(notas.get(2)));
+        
+        System.out.println(notas.size());
+//        AvUm.setToolTipText(notas.get(0));
+//        AvDois.setToolTipText(notas.get(1));
+//        AvTres.setToolTipText(notas.get(2));
         
        
     }//GEN-LAST:event_cbAlunoFocusLost

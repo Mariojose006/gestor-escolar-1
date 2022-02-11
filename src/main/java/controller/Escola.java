@@ -7,6 +7,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import model.Files;
 import model.Json;
 
@@ -101,21 +102,25 @@ public class Escola {
            if(turmas.get(i).equals(turma)){
                for(int j =0;i<turma.getAlunos().size();i++){
                    if(turma.getAlunos().get(j).equals(aluno)){
-                       turmas.get(i).getAlunos().get(j).setNotas(nota1);
-                       turmas.get(i).getAlunos().get(j).setNotas(nota2);
-                       turmas.get(i).getAlunos().get(j).setNotas(nota3);
+                       ArrayList<String> nt = new ArrayList();
+                       nt.add(nota3);
+                       nt.add(nota2);
+                       nt.add(nota1);
+                       turmas.get(i).getAlunos().get(j).setNotas(nt);
+                       
+                       
                    }
                }
            }
        }
     }
-    public ArrayList buscaNota(Turma turma, Aluno aluno){
+    public List buscaNota(Turma turma, Aluno aluno){
        ArrayList<String> notas = new ArrayList();
-        for(int i = 0; i< turmas.size();i++){
-           if(turmas.get(i).equals(turma)){
-               for(int j =0;i<turma.getAlunos().size();i++){
-                   if(turma.getAlunos().get(j).equals(aluno)){
-                       notas = turmas.get(i).getAlunos().get(j).getNotas();
+        for(int i = 0; i< turmas.size()-1;i++){
+           if(turmas.get(i).getNome().equals(turma.getNome())){
+               for(int j =0;i<turma.getAlunos().size()-1;i++){
+                   if(turma.getAlunos().get(j).getCpf().equals(aluno.getCpf())){
+                       notas.addAll(turmas.get(i).getAlunos().get(j).getNotas()); 
                        
                    }
                }
