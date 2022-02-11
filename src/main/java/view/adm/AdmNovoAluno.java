@@ -4,6 +4,12 @@
  */
 package view.adm;
 
+import controller.Aluno;
+import controller.Escola;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+import model.TabelModels.AdmAlunoTableModel;
+
 /**
  *
  * @author adria
@@ -13,8 +19,15 @@ public class AdmNovoAluno extends javax.swing.JFrame {
     /**
      * Creates new form AdmNovoAluno
      */
+    AdmAlunoTableModel tbm = new AdmAlunoTableModel();
+    
     public AdmNovoAluno() {
+        
         initComponents();
+        jTable1.setModel(tbm);
+        
+        
+        
     }
 
     /**
@@ -38,6 +51,8 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +74,19 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         });
 
         jButton2.setText("Fechar");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +120,9 @@ public class AdmNovoAluno extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,6 +152,10 @@ public class AdmNovoAluno extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -129,6 +163,15 @@ public class AdmNovoAluno extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Aluno alunoAux = new Aluno();
+        alunoAux.setNome(jTextField1.getText());
+        alunoAux.setLogin(jTextField2.getText());
+        alunoAux.setSenha(jTextField3.getText());
+        alunoAux.setCpf(jTextField4.getText());
+        alunoAux.setTelefone(jTextField5.getText());
+        
+        tbm.addRow(alunoAux);
+        //salvar aqui no arquivo
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -174,6 +217,8 @@ public class AdmNovoAluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

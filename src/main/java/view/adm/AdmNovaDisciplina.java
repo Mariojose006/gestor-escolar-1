@@ -4,6 +4,8 @@
  */
 package view.adm;
 
+import controller.Disciplina;
+
 /**
  *
  * @author adria
@@ -93,6 +95,11 @@ public class AdmNovaDisciplina extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Disciplina diciplinaAux = new Disciplina();
+        diciplinaAux.setNome(jTextField4.getText());
+        diciplinaAux.setSala(jTextField5.getText());
+        
+        //gravar no arquivo
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
