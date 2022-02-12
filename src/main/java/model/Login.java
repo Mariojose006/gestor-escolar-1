@@ -115,7 +115,8 @@ public class Login extends javax.swing.JFrame {
         
         if(login.equals("ADM") && senha.equals("ADM"))        
         {      
-             AdmInicial telaAdm = new AdmInicial();            
+            this.setVisible(false); 
+            AdmInicial telaAdm = new AdmInicial();            
              telaAdm.setVisible(true);
             
             
@@ -125,7 +126,9 @@ public class Login extends javax.swing.JFrame {
             {
                 if(aux.getLogin().equals(inputLogin.getText()) && aux.getSenha().equals(inputSenha.getText()))
                 {
-                   AlunoInicial al = new AlunoInicial(); 
+                    this.setVisible(false);
+                    Escola.cpfUserLogado = aux.getCpf();
+                    AlunoInicial al = new AlunoInicial(); 
                    al.setVisible(true); 
                 }else
                 {
@@ -133,7 +136,9 @@ public class Login extends javax.swing.JFrame {
                     {
                        if(aux1.getLogin().equals(inputLogin.getText()) && aux1.getSenha().equals(inputSenha.getText()))
                             {
-                               ProfInicial pf = new ProfInicial(); 
+                                this.setVisible(false);
+                                Escola.cpfUserLogado = aux1.getCpf();
+                                ProfInicial pf = new ProfInicial(); 
                                 pf.setVisible(true); 
                             } 
                     }

@@ -18,10 +18,11 @@ import model.Json;
 */
 
 public class Escola {
-    public ArrayList <Aluno> alunos = new ArrayList<>();
-    public ArrayList <Professor> professores = new ArrayList<>();
-    public ArrayList <Disciplina> disciplinas = new ArrayList<>();
-    public ArrayList <Turma> turmas = new ArrayList<>();
+    public static String cpfUserLogado; 
+    public static ArrayList <Aluno> alunos = new ArrayList<>();
+    public static ArrayList <Professor> professores = new ArrayList<>();
+    public static ArrayList <Disciplina> disciplinas = new ArrayList<>();
+    public static ArrayList <Turma> turmas = new ArrayList<>();
     
     Json gson = new Json();
     public void adicionaAluno(Aluno aluno){
