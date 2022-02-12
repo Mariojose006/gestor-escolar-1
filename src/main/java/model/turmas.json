@@ -7,3 +7,20 @@
 {"nome":"Turma teste0","alunos":[{"notas":[],"id":0,"senha":"aluno123","login":"Andre0","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":1,"senha":"aluno123","login":"Andre0","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":2,"senha":"aluno123","login":"Andre0","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":3,"senha":"aluno123","login":"Andre0","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":4,"senha":"aluno123","login":"Andre0","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2}],"professor":{"id":0,"senha":"senha0","login":"teste0","cpf":"2222222222222","nome":"profteste0","telefone":"3333333","tipoUsuario":1},"maxAlunos":35}
 {"nome":"Turma teste1","alunos":[{"notas":[],"id":0,"senha":"aluno123","login":"Andre1","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":1,"senha":"aluno123","login":"Andre1","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":2,"senha":"aluno123","login":"Andre1","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":3,"senha":"aluno123","login":"Andre1","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":4,"senha":"aluno123","login":"Andre1","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2}],"professor":{"id":1,"senha":"senha1","login":"teste1","cpf":"2222222222222","nome":"profteste1","telefone":"3333333","tipoUsuario":1},"maxAlunos":35}
 {"nome":"Turma teste2","alunos":[{"notas":[],"id":0,"senha":"aluno123","login":"Andre2","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":1,"senha":"aluno123","login":"Andre2","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":2,"senha":"aluno123","login":"Andre2","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":3,"senha":"aluno123","login":"Andre2","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2},{"notas":[],"id":4,"senha":"aluno123","login":"Andre2","cpf":"07653511619","nome":"Andre reis","telefone":"32998041251","tipoUsuario":2}],"professor":{"id":2,"senha":"senha2","login":"teste2","cpf":"2222222222222","nome":"profteste2","telefone":"3333333","tipoUsuario":1},"maxAlunos":35}
+
+
+
+
+    Aluno aluno0 = new Aluno(01,"senha","adrian","11111111111","Adrian","32446783726",2,nt);
+    Aluno aluno1 = new Aluno(02,"senha","mario","22222222222","Andre reis","32998654345",2,nt);
+    Aluno aluno2 = new Aluno(03,"senha","jose","33333333333","Andre reis","32556765434",2,nt);
+    Aluno aluno3 = new Aluno(04,"senha","pedro","44444444444","Andre reis","32556543578",2,nt);
+    Aluno aluno4 = new Aluno(05,"senha","paulo","55555555555","Andre reis","767787643",2,nt);
+
+    ArrayList<Aluno> alunos = new ArryList();
+    alunos.add(aluno0);
+    alunos.add(aluno1);
+    alunos.add(aluno2);
+    alunos.add(aluno3);
+    alunos.add(aluno04);
+    
