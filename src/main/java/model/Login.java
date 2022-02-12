@@ -129,10 +129,14 @@ public class Login extends javax.swing.JFrame {
                     this.setVisible(false);
                     Escola.cpfUserLogado = aux.getCpf();
                     AlunoInicial al = new AlunoInicial(); 
-                   al.setVisible(true); 
+                    al.setVisible(true); 
                 }else
                 {
-                    for(Professor aux1:escola.professores)
+                    
+           
+                } 
+            }
+             for(Professor aux1:escola.professores)
                     {
                        if(aux1.getLogin().equals(inputLogin.getText()) && aux1.getSenha().equals(inputSenha.getText()))
                             {
@@ -140,11 +144,12 @@ public class Login extends javax.swing.JFrame {
                                 Escola.cpfUserLogado = aux1.getCpf();
                                 ProfInicial pf = new ProfInicial(); 
                                 pf.setVisible(true); 
-                            } 
+                            }
+                       else {
+                            
+                            
+                         }
                     }
-           
-                } 
-            }
             
              
         }
@@ -199,7 +204,7 @@ public class Login extends javax.swing.JFrame {
         });
         
         
-       
+        
         
         
     }

@@ -11,27 +11,24 @@ import java.util.Scanner;
 
 
 public class arquivos {
-	public static ArrayList lerArquivo(String caminho) throws FileNotFoundException {
+	public static ArrayList lerArquivo(String caminho) {
         ArrayList leitura = new ArrayList();
         try{
-           //StringBuilder conteudo = new StringBuilder();
-       
+           //StringBuilder conteudo = new StringBuilder();       
         File arquivo = new File(caminho);
-
         Scanner leitor = new Scanner(arquivo);
-
         // varrendo o conteúdo do arquivo linha por linha
         while (leitor.hasNextLine()) {              
               // conteudo.append(leitor.nextLine()).append("\r\n");
               leitura.add((leitor.nextLine()));
-         }
-
-        
+         }        
         }
         catch(FileNotFoundException e){
             System.out.println("Arquivo não encontrado!" + caminho);
             
         }
+            System.out.println(leitura.size());
+            System.out.println(leitura.get(0));
         return leitura;
         }
 
@@ -42,7 +39,7 @@ public class arquivos {
             File arquivo = new File(caminho);
 
             //Se o arquivo já existir, então abrir para concatenação, caso contrário criar novo arquivo
-            fwArquivo = new FileWriter(arquivo, true);
+            fwArquivo = new FileWriter(arquivo, false);
             //fwArquivo.append(conteudo + "\r\n");
             bwArquivo = new BufferedWriter(fwArquivo);
             

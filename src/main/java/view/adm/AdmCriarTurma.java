@@ -5,9 +5,12 @@
 package view.adm;
 
 import controller.Aluno;
+import controller.Disciplina;
 import controller.Escola;
+import controller.Professor;
 import model.TabelModels.AdmAlunoTableModel;
 import model.TabelModels.AdmTurmaTableModel;
+import model.TabelModels.comboBoxModel;
 
 /**
  *
@@ -18,13 +21,18 @@ public class AdmCriarTurma extends javax.swing.JFrame {
     /**
      * Creates new form AdmCriarTurma
      */
+    
     AdmAlunoTableModel admTmodel = new AdmAlunoTableModel();
     AdmAlunoTableModel admTmode2 = new AdmAlunoTableModel();
+    
+    
     public AdmCriarTurma() {
         initComponents();
         jTable1.setModel(admTmodel);
         jTable2.setModel(admTmode2);
         carregaDados();
+        
+        
     }
     
     public void carregaDados(){
@@ -36,6 +44,7 @@ public class AdmCriarTurma extends javax.swing.JFrame {
             admTmodel.addRow(aux);
         }
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,21 +58,18 @@ public class AdmCriarTurma extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbDisciplina = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbProfessor = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -72,11 +78,15 @@ public class AdmCriarTurma extends javax.swing.JFrame {
         jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbDisciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbDisciplinaActionPerformed(evt);
             }
         });
 
@@ -110,8 +120,6 @@ public class AdmCriarTurma extends javax.swing.JFrame {
 
         jLabel2.setText("Selecione os Alunos para a turma");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel3.setText("Professor");
 
         jButton1.setText("Adicionar");
@@ -135,19 +143,6 @@ public class AdmCriarTurma extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("SAIR");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,8 +154,8 @@ public class AdmCriarTurma extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cbProfessor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbDisciplina, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,11 +185,11 @@ public class AdmCriarTurma extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
@@ -214,26 +209,21 @@ public class AdmCriarTurma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDisciplinaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbDisciplinaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String campo1 = admTmodel.getValueAt(jTable1.getSelectedRow(), 0).toString();
         String campo2 = admTmodel.getValueAt(jTable1.getSelectedRow(), 1).toString();
         String campo3 = admTmodel.getValueAt(jTable1.getSelectedRow(), 2).toString();
-        String campo4 = "500";//admTmodel.getValueAt(jTable1.getSelectedRow(), 3).toString();
+        String campo4 = admTmodel.getValueAt(jTable1.getSelectedRow(), 3).toString();
         String campo5 = admTmodel.getValueAt(jTable1.getSelectedRow(), 4).toString();
         String campo6 = admTmodel.getValueAt(jTable1.getSelectedRow(), 5).toString();        
-        Aluno alunoAux = new Aluno(campo1.hashCode(),campo2,campo3,"5000",campo5,campo6,00,null);
+        Aluno alunoAux = new Aluno(campo1.hashCode(),campo2,campo3,campo4,campo5,campo6,00,null);
         admTmode2.addRow(alunoAux);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -244,6 +234,19 @@ public class AdmCriarTurma extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for(Disciplina d: Escola.disciplinas){
+            cbDisciplina.addItem(d.getNome());
+        }
+        for(Professor p: Escola.professores){
+            cbProfessor.addItem(p.getCpf());
+            
+
+            }
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -281,19 +284,16 @@ public class AdmCriarTurma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbDisciplina;
+    private javax.swing.JComboBox<String> cbProfessor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

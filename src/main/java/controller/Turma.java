@@ -8,6 +8,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
 * Representa uma turma da escola;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 public class Turma {
     private String nome;
-    private ArrayList<Aluno> alunos = new ArrayList<>();
+    public ArrayList<Aluno> alunos = new ArrayList<>();
     private Professor professor;
     private Disciplina disciplina;
     private int maxAlunos = 35;
@@ -50,7 +51,7 @@ public class Turma {
     public void setDisciplina(Disciplina disciplina){
         this.disciplina = disciplina;
     }
-    public Disciplina setDisciplina(){
+    public Disciplina getDisciplina(){
         return disciplina;
     }
     public int getMaxAlunos() {
@@ -61,10 +62,31 @@ public class Turma {
     }
     public ArrayList<Aluno> getAlunos(){
         return alunos;
+    }  
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.nome);
+        return hash;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Turma other = (Turma) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
     
 

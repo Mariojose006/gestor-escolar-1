@@ -6,6 +6,7 @@ package view.adm;
 
 import controller.Aluno;
 import controller.Escola;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 import model.TabelModels.AdmAlunoTableModel;
@@ -169,13 +170,27 @@ public class AdmNovoAluno extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Aluno alunoAux = new Aluno();
+        int aux = 0;
         alunoAux.setNome(jTextField1.getText());
         alunoAux.setLogin(jTextField2.getText());
         alunoAux.setSenha(jTextField3.getText());
         alunoAux.setCpf(jTextField4.getText());
         alunoAux.setTelefone(jTextField5.getText());
         
-        tbm.addRow(alunoAux);
+        
+        for(Aluno a: Escola.alunos){
+            System.out.println(a.getCpf());
+           if(a.getCpf().equals(jTextField4.getText())){
+               JOptionPane.showInternalMessageDialog(null, "Erro" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
+               aux=1;
+           }        
+        }
+        if(aux != 1){
+            tbm.addRow(alunoAux);
+            Escola.alunos.add(alunoAux);
+            
+        }
+        
         //salvar aqui no arquivo
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -13,8 +13,17 @@ import com.google.gson.Gson;
 import controller.Administrador;
 import controller.Aluno;
 import controller.Disciplina;
+import controller.Escola;
 import controller.Professor;
 import controller.Turma;
+import java.util.ArrayList;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import controller.Auxiliar;
+import java.lang.reflect.Type;
+
+
 
 public class Json {
     Gson gson = new Gson();
@@ -52,12 +61,31 @@ public class Json {
         return prof;
     }
     //Turma
-    public String turmaToJson(Turma turma){
+//    public String turmaToJson(Turma turma){
+//        return gson.toJson(turma);
+//    }
+     public String turmaToJson(ArrayList<Turma> turma){
         return gson.toJson(turma);
     }
+    
     public Turma jsonToTurma(String json){
         Turma turma = gson.fromJson(json, Turma.class);
         return turma;
     }
+   public  List<Turma> toTurmas(ArrayList<String> json) {
+        Type turmasTipo = new TypeToken<ArrayList<Turma>>() {
+        }.getType();
+        List<Turma> turmas = gson.fromJson(json.get(0), turmasTipo);
+
+        return turmas;
+    }
     
+     //Escola
+    public String escolaToJson(Auxiliar escola){
+        return gson.toJson(escola);
+    }
+    public Auxiliar jsonToEscola(String json){
+        Auxiliar escola = gson.fromJson(json, Auxiliar.class);
+        return escola;
+    }
 }
