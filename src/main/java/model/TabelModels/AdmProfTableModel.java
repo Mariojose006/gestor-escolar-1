@@ -45,10 +45,13 @@ public class AdmProfTableModel extends AbstractTableModel{
             case 2: 
                 //return dados.get(linha).getValor();
                 return dados.get(linha).getLogin();
+            case 3: 
+                //return dados.get(linha).getValor();
+                return dados.get(linha).getCpf();    
             case 4:
-                return dados.get(linha).getCpf();
-            case 5:
                 return dados.get(linha).getNome();
+            case 5:
+                return dados.get(linha).getTelefone();
             case 6:
                 return dados.get(linha).getTipoUsuário();
         }

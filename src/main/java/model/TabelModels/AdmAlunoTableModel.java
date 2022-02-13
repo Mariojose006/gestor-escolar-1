@@ -45,10 +45,12 @@ public class AdmAlunoTableModel extends AbstractTableModel {
             case 2: 
                 //return dados.get(linha).getValor();
                 return dados.get(linha).getLogin();
-            case 4:
+            case 3:
                 return dados.get(linha).getCpf();
-            case 5:
+            case 4:
                 return dados.get(linha).getNome();
+            case 5:
+                return dados.get(linha).getTelefone();    
             case 6:
                 return dados.get(linha).getTipoUsuário();
         }

@@ -43,14 +43,5 @@ public class Administrador {
     public void setLogin(String login) {
         this.login = login;
     }
-    public void cadastraAluno(){
     
-    }
-    
-    public void cadastraProfessor(){
-    
-    }
-    public void cadastraDisciplina(){
-    
-    }
 }

@@ -12,6 +12,7 @@ import controller.Turma;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,10 +36,8 @@ public class ProfInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cbTurma = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        cbAluno = new javax.swing.JComboBox<>();
         AvUm = new javax.swing.JTextField();
         AvDois = new javax.swing.JTextField();
         AvTres = new javax.swing.JTextField();
@@ -47,6 +46,9 @@ public class ProfInicial extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        cbTurma = new javax.swing.JComboBox<>();
+        cbAluno = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -55,29 +57,9 @@ public class ProfInicial extends javax.swing.JFrame {
             }
         });
 
-        cbTurma.setModel(cbTurma.getModel());
-        cbTurma.setToolTipText("");
-        cbTurma.setName(""); // NOI18N
-        cbTurma.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbTurmaMouseClicked(evt);
-            }
-        });
-        cbTurma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbTurmaActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("Turma:");
 
         jLabel2.setText("Aluno:");
-
-        cbAluno.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cbAlunoFocusLost(evt);
-            }
-        });
 
         jLabel3.setText("Av1:");
 
@@ -86,6 +68,11 @@ public class ProfInicial extends javax.swing.JFrame {
         jLabel5.setText("Av3:");
 
         jButton1.setText("Fechar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Salvar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +80,17 @@ public class ProfInicial extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jButton3.setText("Buscar Alunos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        cbTurma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cbAluno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,8 +106,8 @@ public class ProfInicial extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbTurma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cbTurma, 0, 154, Short.MAX_VALUE)
+                            .addComponent(cbAluno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
@@ -126,20 +124,23 @@ public class ProfInicial extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2)))))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jButton3)
+                    .addComponent(cbTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cbAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AvUm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -161,70 +162,68 @@ public class ProfInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTurmaActionPerformed
-        // TODO add your handling code here:
-              
-        
-    }//GEN-LAST:event_cbTurmaActionPerformed
-
-    private void cbTurmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTurmaMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_cbTurmaMouseClicked
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+            int indexTurma =0,indexAluno=0;
+            for(Turma t: Escola.turmas){ 
+                 
+                if(t.getNome().equals(cbTurma.getSelectedItem())){
+                       
+                    for(Aluno a: t.getAlunos()){                       
+                        if(a.getCpf().equals(cbAluno.getSelectedItem()))                       
+                        {   
+                            ArrayList <String> notas = new ArrayList<>();  
+                             notas.add(AvUm.getText());
+                             notas.add(AvDois.getText());
+                             notas.add(AvTres.getText());
+                             Escola.turmas.get(indexTurma--).alunos.get(indexAluno--).setNotas(notas);
+                                                       
+                        }
+                        indexAluno++;
+                     }           
+                }  
+                indexTurma++;
+            }
+            
        
         
-        System.out.println(cbTurma.getSelectedItem());
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        Escola es = new Escola();
-        es.ler("src\\main\\java\\model\\turmas.json");
-        ArrayList <Turma> turmas = new ArrayList<>();       
-        Professor professor = new Professor(0,"senha0","teste0","2222222222222","profteste0","3333333",1);       
+        
+        ArrayList <Turma> turmas = new ArrayList<>();  
             
-        turmas = es.buscarTurmaProfessor(professor);
+        turmas = Escola.buscarTurmaProfessor(Escola.buscarProfessor(Escola.cpfUserLogado));
+        
         for(Turma t: turmas){       
            
             cbTurma.addItem(t.getNome());
-            int i = 0;   
-             for(Aluno a: t.getAlunos()){                              
-                cbAluno.addItem(t.getAlunos().get(i).getCpf());
-                i++;
-             }
+            
         } 
     }//GEN-LAST:event_formWindowOpened
 
-    private void cbAlunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cbAlunoFocusLost
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Escola es = new Escola();       
-        ArrayList <Turma> turmas = new ArrayList<>();
-        ArrayList <String> notas = new ArrayList<>();
-        
-        for(Turma t: turmas){           
-            if(t.getNome().equals(cbTurma.getSelectedItem())){
-                turmas.add(t);               
-                for(Aluno a: t.getAlunos()){                       
-                    if(a.getCpf().equals(cbAluno.getSelectedItem()))
-                        System.out.println(a.getCpf().equals(cbAluno.getSelectedItem()));
+        cbAluno.removeAllItems();
+        for(Turma t: Escola.turmas){
+            int i = 0; 
+            if(cbTurma.getSelectedItem().equals(t.getNome())){               
+             for(Aluno a: t.alunos){                                        
+                 cbAluno.addItem(t.alunos.get(i).getCpf()); 
+                                         
+                 }                 
+                i++;
+             }
+            }       
 
-                         notas.addAll(es.buscaNota(t, a));                   
-                 }            
-            }            
-             
-        }
-        
-        System.out.println(notas.size());
-//        AvUm.setToolTipText(notas.get(0));
-//        AvDois.setToolTipText(notas.get(1));
-//        AvTres.setToolTipText(notas.get(2));
-        
-       
-    }//GEN-LAST:event_cbAlunoFocusLost
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +268,7 @@ public class ProfInicial extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbTurma;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

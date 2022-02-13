@@ -5,7 +5,9 @@
 package view.adm;
 
 import controller.Aluno;
+import controller.Escola;
 import controller.Professor;
+import javax.swing.JOptionPane;
 import model.TabelModels.AdmProfTableModel;
 
 /**
@@ -163,14 +165,26 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Professor alunoAux = new Professor();
-        alunoAux.setNome(jTextField1.getText());
-        alunoAux.setLogin(jTextField2.getText());
-        alunoAux.setSenha(jTextField3.getText());
-        alunoAux.setCpf(jTextField4.getText());
-        alunoAux.setTelefone(jTextField5.getText());
+        int aux =0;
+        Professor profAux = new Professor();
+        profAux.setNome(jTextField1.getText());
+        profAux.setLogin(jTextField2.getText());
+        profAux.setSenha(jTextField3.getText());
+        profAux.setCpf(jTextField4.getText());
+        profAux.setTelefone(jTextField5.getText());
         
-        tmd.addRow(alunoAux);
+        for(Aluno a: Escola.alunos){
+            System.out.println(a.getCpf());
+           if(a.getCpf().equals(jTextField4.getText())){
+               JOptionPane.showInternalMessageDialog(null, "Erro" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
+              aux=1;
+           }        
+        }
+        if(aux != 1){
+            tmd.addRow(profAux);
+            Escola.professores.add(profAux);
+            
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

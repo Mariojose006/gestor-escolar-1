@@ -19,16 +19,20 @@ public class Aluno extends Pessoa {
 
     private ArrayList<String> notas = new ArrayList(); 
 
-   
-
-    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario,ArrayList<String> notas ) {
+    public Aluno(int id, String senha, String login, String cpf, String nome, String telefone, int tipoUsuario,ArrayList<String> nota) {
         super(id, senha, login, cpf, nome, telefone, tipoUsuario);
-       
-    }   
-   
+        notas.addAll(nota);
+    }
 
     public Aluno() {
     }
+
+   
+
+      
+   
+
+    
 
 //    public ArrayList<String> getNotas() {
 //        return notas;
@@ -48,12 +52,4 @@ public class Aluno extends Pessoa {
     public void setNotas(ArrayList<String> notas) {
         this.notas = notas;
     }
-   
-    
-    public void ExibeNotas(){
-    
-    
-    } 
-    
-    
 }

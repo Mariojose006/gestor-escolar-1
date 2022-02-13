@@ -6,10 +6,12 @@
 */ 
 package controller;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Files;
+
 import model.Json;
+import model.arquivos;
 
 
 /*
@@ -36,26 +38,57 @@ public class Escola {
     public void adicionaDisciplina(Disciplina disciplina){
         disciplinas.add(disciplina);
     }
-    public ArrayList buscarTurmaProfessor(Professor professor){
+    public static ArrayList buscarTurmaProfessor(Professor professor){
         ArrayList<Turma> turmaaux = new ArrayList<>();
-        for(Turma t: this.turmas){
-             if(t.getProfessor().getCpf().equals(professor.getCpf()) )
-             turmaaux.add(t);
-         }   
+        for(Turma t: Escola.turmas){
+             if(t.getProfessor().getCpf().equals(professor.getCpf()) ){
+                 if(!turmaaux.contains(t)){
+                     turmaaux.add(t);
+                 }
+                
+             }
+                 
+                 
+             
+         }
+         System.out.println("tamanho da turma"+turmaaux.size());
          return turmaaux;
     }
+    public static Professor buscarProfessor(String cpf){
+        
+        for(Professor p: Escola.professores)
+        {
+             if(p.getCpf().equals(cpf)){
+               return p;
+        }
+         }   
+         return null;
+    }
    
-    public void ler(String path)
+    public void ler2(String path) 
     {
         ArrayList<String> dadosStringLinhaJson = new ArrayList<>();
-        dadosStringLinhaJson.addAll(Files.read(path));
-        for(String a:dadosStringLinhaJson){
-             turmas.add(gson.jsonToTurma(a));
-        }
+        dadosStringLinhaJson.addAll(arquivos.lerArquivo(path));
+//        for(String a:dadosStringLinhaJson){
+//             turmas.add(gson.jsonToTurma(a));
+//        }
+        turmas.addAll(gson.toTurmas(dadosStringLinhaJson));
         this.processaAlunos();
         this.processaProfessores();
         this.processaDisciplinas();
     }
+    public void ler(String path){
+        ArrayList<String> dadosStringLinhaJson = new ArrayList<>();
+        dadosStringLinhaJson.add(arquivos.lerArquivo(path).get(0).toString());
+        Auxiliar aux = new Auxiliar();
+        aux = gson.jsonToEscola(dadosStringLinhaJson.get(0));
+        turmas.addAll(aux.turmas);
+        System.out.println(turmas.size());
+        this.processaAlunos();
+        this.processaProfessores();
+        this.processaDisciplinas();
+    }
+    
     public void processaAlunos(){
         for(Turma turmaAux: turmas){
             for(Aluno alunoAux: turmaAux.getAlunos()){
@@ -115,19 +148,39 @@ public class Escola {
            }
        }
     }
-    public List buscaNota(Turma turma, Aluno aluno){
+    public static List buscaNota(Turma turma, Aluno aluno){
        ArrayList<String> notas = new ArrayList();
-        for(int i = 0; i< turmas.size()-1;i++){
-           if(turmas.get(i).getNome().equals(turma.getNome())){
-               for(int j =0;i<turma.getAlunos().size()-1;i++){
-                   if(turma.getAlunos().get(j).getCpf().equals(aluno.getCpf())){
-                       notas.addAll(turmas.get(i).getAlunos().get(j).getNotas()); 
-                       
+//        for(int i = 0; i< turmas.size()-1;i++){
+//           if(turmas.get(i).getNome().equals(turma.getNome())){
+//               for(int j =0;i<turma.getAlunos().size()-1;i++){
+//                   if(turma.getAlunos().get(j).getCpf().equals(aluno.getCpf())){
+//                       notas.addAll(turmas.get(i).getAlunos().get(j).getNotas()); 
+//                       
+//                   }
+//               }
+//           }
+//       }
+
+        for(Turma t: Escola.turmas){
+            if(t.getNome().equals(turma.getNome())){
+               for(Aluno a: Escola.alunos){ 
+                   if(a.getCpf().equals(aluno.getCpf())){
+                       notas.addAll(a.getNotas());
+                   
                    }
+               
                }
-           }
-       }
+            }
+        
+        }
        return notas;
+    }
+    public void atualizaArquivo(){
+        String pathArquivoJson = "src\\main\\java\\model\\turmas.json";
+        Auxiliar aux = new Auxiliar();
+        Json json = new Json();
+        String um = json.escolaToJson(aux);
+        arquivos.escreverArquivo(pathArquivoJson,um);
     }
     
 }
