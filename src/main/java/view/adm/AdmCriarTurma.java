@@ -7,6 +7,7 @@ import controller.Escola;
 import controller.Professor;
 import controller.Turma;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.TabelModels.AdmAlunoTableModel;
 
 public class AdmCriarTurma extends javax.swing.JFrame {
@@ -256,8 +257,17 @@ public class AdmCriarTurma extends javax.swing.JFrame {
         nTurma.alunos.addAll(nAlunos);
         nTurma.setProfessor(nProfessor);
         nTurma.setDisciplina(nDisciplina);
-        Escola.turmas.add(nTurma);
-        Escola.atualizaArquivo();
+        
+        if(jTextField1.getText()==""){
+            JOptionPane.showInternalMessageDialog(null, "Preencha o nome da turma!" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
+
+        
+        }else
+        {
+             Escola.turmas.add(nTurma);
+             Escola.atualizaArquivo();
+        }
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

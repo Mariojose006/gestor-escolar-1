@@ -157,7 +157,7 @@ public class Login extends javax.swing.JFrame {
                     }
              
             if(!testeLogin)
-                JOptionPane.showInternalMessageDialog(null, "Usuario nao encontrado" ,"Ero", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showInternalMessageDialog(null, "Usuário nao encontrado!" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
              
         }
         } catch (Exception e) {

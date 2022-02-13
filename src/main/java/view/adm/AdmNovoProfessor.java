@@ -186,13 +186,18 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
            }        
         }
         if(aux != 1){
-            tmd.addRow(profAux);
-            Escola.professores.add(profAux);
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
+            if(jTextField1.getText()==""||jTextField2.getText()==""||jTextField3.getText()==""||jTextField4.getText()==""||jTextField5.getText()==""){
+               JOptionPane.showInternalMessageDialog(null, "Preencha todos os dados do professor!" ,"Erro", JOptionPane.INFORMATION_MESSAGE);     
+            }
+            else{
+                tmd.addRow(profAux);
+                Escola.professores.add(profAux);
+                jTextField1.setText("");
+                jTextField2.setText("");
+                jTextField3.setText("");
+                jTextField4.setText("");
+                jTextField5.setText("");
+            }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

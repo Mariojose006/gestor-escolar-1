@@ -189,13 +189,20 @@ public class AdmNovoAluno extends javax.swing.JFrame {
            }        
         }
         if(aux != 1){
-            tbm.addRow(alunoAux);
-            Escola.alunos.add(alunoAux);
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            jTextField5.setText("");
+            if(jTextField1.getText()==""||jTextField2.getText()==""||jTextField3.getText()==""||jTextField4.getText()==""||jTextField5.getText()==""){
+               JOptionPane.showInternalMessageDialog(null, "Preencha todos os dados do aluno!" ,"Erro", JOptionPane.INFORMATION_MESSAGE);     
+            }
+            else{
+                tbm.addRow(alunoAux);
+                Escola.alunos.add(alunoAux);
+                jTextField1.setText("");
+                jTextField2.setText("");
+                jTextField3.setText("");
+                jTextField4.setText("");
+                jTextField5.setText("");
+            }
+          
+            
         }
         
         //salvar aqui no arquivo

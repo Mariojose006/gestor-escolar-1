@@ -3,6 +3,7 @@ package view.adm;
 
 import controller.Disciplina;
 import controller.Escola;
+import javax.swing.JOptionPane;
 
 
 public class AdmNovaDisciplina extends javax.swing.JFrame {
@@ -101,9 +102,17 @@ public class AdmNovaDisciplina extends javax.swing.JFrame {
         diciplinaAux.setSala(jTextField5.getText());
         
         //gravar no arquivo
-        Escola.disciplinas.add(diciplinaAux);
-        jTextField4.setText("");
-        jTextField5.setText("");
+        if(jTextField4.getText()==""||jTextField5.getText()==""){
+         JOptionPane.showInternalMessageDialog(null, "Preencha todos os dados da disciplina!" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
+
+        }else
+        {
+            Escola.disciplinas.add(diciplinaAux);
+            jTextField4.setText("");
+            jTextField5.setText("");
+        } 
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
