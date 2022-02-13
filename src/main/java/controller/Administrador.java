@@ -16,9 +16,7 @@ import java.util.ArrayList;
 */
 public class Administrador {
     private String senha;
-    private String login;
-    //protected static ArrayList <Aluno> alunos;
-    //protected static ArrayList <Professor> professores;
+    private String login;    
 
     public Administrador(String senha, String login) {
         this.senha = senha;

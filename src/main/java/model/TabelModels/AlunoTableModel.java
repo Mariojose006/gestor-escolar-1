@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model.TabelModels;
 
 import controller.Disciplina;
@@ -9,10 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author adria
- */
+
 public class AlunoTableModel extends AbstractTableModel{
     private List<Disciplina> dados = new ArrayList<>();
     private String[] colunas = {"Avaliação","Notas"};

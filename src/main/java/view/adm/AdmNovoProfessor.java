@@ -51,6 +51,11 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Nome:");
 
@@ -173,8 +178,7 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
         profAux.setCpf(jTextField4.getText());
         profAux.setTelefone(jTextField5.getText());
         
-        for(Aluno a: Escola.alunos){
-            System.out.println(a.getCpf());
+        for(Aluno a: Escola.alunos){            
            if(a.getCpf().equals(jTextField4.getText())){
                JOptionPane.showInternalMessageDialog(null, "Erro" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
               aux=1;
@@ -183,7 +187,11 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
         if(aux != 1){
             tmd.addRow(profAux);
             Escola.professores.add(profAux);
-            
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -191,6 +199,14 @@ public class AdmNovoProfessor extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for(Professor p: Escola.professores){
+            tmd.addRow(p);
+        }
+            
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

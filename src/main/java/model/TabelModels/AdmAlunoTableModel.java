@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author adria
- */
+
 public class AdmAlunoTableModel extends AbstractTableModel {
     private ArrayList<Aluno> dados = new ArrayList<>();
     private String[] colunas = {"id","senha","login","cpf","nome","telefone","tipo"};

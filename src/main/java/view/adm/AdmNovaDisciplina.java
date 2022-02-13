@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view.adm;
 
 import controller.Disciplina;
 import controller.Escola;
 
-/**
- *
- * @author adria
- */
+
 public class AdmNovaDisciplina extends javax.swing.JFrame {
 
     /**
@@ -107,6 +101,8 @@ public class AdmNovaDisciplina extends javax.swing.JFrame {
         
         //gravar no arquivo
         Escola.disciplinas.add(diciplinaAux);
+        jTextField4.setText("");
+        jTextField5.setText("")
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

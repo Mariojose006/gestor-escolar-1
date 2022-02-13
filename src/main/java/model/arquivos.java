@@ -26,9 +26,7 @@ public class arquivos {
         catch(FileNotFoundException e){
             System.out.println("Arquivo não encontrado!" + caminho);
             
-        }
-            System.out.println(leitura.size());
-            System.out.println(leitura.get(0));
+        }            
         return leitura;
         }
 

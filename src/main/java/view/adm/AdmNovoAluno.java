@@ -25,8 +25,7 @@ public class AdmNovoAluno extends javax.swing.JFrame {
     public AdmNovoAluno() {
         
         initComponents();
-        jTable1.setModel(tbm);
-        
+        jTable1.setModel(tbm);      
         
         
     }
@@ -56,6 +55,11 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Nome:");
 
@@ -186,7 +190,11 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         if(aux != 1){
             tbm.addRow(alunoAux);
             Escola.alunos.add(alunoAux);
-            
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
         }
         
         //salvar aqui no arquivo
@@ -196,6 +204,13 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for(Aluno a: Escola.alunos){
+             tbm.addRow(a);        
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

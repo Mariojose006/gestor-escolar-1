@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view.adm;
 
 import controller.Aluno;
@@ -11,12 +8,7 @@ import controller.Professor;
 import controller.Turma;
 import java.util.ArrayList;
 import model.TabelModels.AdmAlunoTableModel;
-import model.TabelModels.comboBoxModel;
 
-/**
- *
- * @author adria
- */
 public class AdmCriarTurma extends javax.swing.JFrame {
 
     /**

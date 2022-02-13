@@ -9,10 +9,7 @@ import controller.Professor;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author adria
- */
+
 public class AdmProfTableModel extends AbstractTableModel{
     private ArrayList<Professor> dados = new ArrayList<>();
     private String[] colunas = {"id","senha","login","cpf","nome","telefone","tipo"};

@@ -183,14 +183,12 @@ public class ProfInicial extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
             int indexTurma =0,indexAluno=0;
-            for(Turma t: Escola.turmas){ 
-                 
-                if(t.getNome().equals(cbTurma.getSelectedItem())){
-                       
+            for(Turma t: Escola.turmas){                  
+                if(t.getNome().equals(cbTurma.getSelectedItem())){                       
                     for(Aluno a: t.getAlunos()){                       
                         if(a.getCpf().equals(cbAluno.getSelectedItem()))                       
                         {   
-                            ArrayList <String> notas = new ArrayList<>();  
+                             ArrayList <String> notas = new ArrayList<>();  
                              notas.add(AvUm.getText());
                              notas.add(AvDois.getText());
                              notas.add(AvTres.getText());

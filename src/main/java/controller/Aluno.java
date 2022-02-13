@@ -27,24 +27,6 @@ public class Aluno extends Pessoa {
     public Aluno() {
     }
 
-   
-
-      
-   
-
-    
-
-//    public ArrayList<String> getNotas() {
-//        return notas;
-//    }
-//
-//    
-//
-//    public void setNotas(ArrayList<String> nota) {
-//        notas = nota;
-//        
-//    }
-
     public ArrayList<String> getNotas() {
         return notas;
     }
