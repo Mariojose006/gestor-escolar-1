@@ -102,7 +102,7 @@ public class AdmNovaDisciplina extends javax.swing.JFrame {
         //gravar no arquivo
         Escola.disciplinas.add(diciplinaAux);
         jTextField4.setText("");
-        jTextField5.setText("")
+        jTextField5.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -118,9 +118,9 @@ public class Escola {
         }
     }
     
-    public ArrayList turmasAlunoCursa(Aluno aluno){
+    public static ArrayList turmasAlunoCursa(Aluno aluno){
         ArrayList <Turma> turmasAux = new ArrayList<>();
-        for(Turma a: this.turmas){
+        for(Turma a: turmas){
             if(a.getAlunos().contains(aluno)){
                 turmasAux.add(a);
             }
