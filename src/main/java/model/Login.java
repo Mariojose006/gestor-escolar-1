@@ -108,8 +108,6 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //apertou o login 1 carregar os arquivos 2 comparar o login 3 enviar para tela correta 
-        Escola escola = new Escola();        
-        escola.ler("src\\main\\java\\model\\turmas.json");
         String login = inputLogin.getText();
         String senha = inputSenha.getText();
         
@@ -122,7 +120,7 @@ public class Login extends javax.swing.JFrame {
             
         }else 
         {   
-             for(Aluno aux:escola.alunos)
+             for(Aluno aux:Escola.alunos)
             {
                 if(aux.getLogin().equals(inputLogin.getText()) && aux.getSenha().equals(inputSenha.getText()))
                 {
@@ -136,7 +134,7 @@ public class Login extends javax.swing.JFrame {
            
                 } 
             }
-             for(Professor aux1:escola.professores)
+             for(Professor aux1:Escola.professores)
                     {
                        if(aux1.getLogin().equals(inputLogin.getText()) && aux1.getSenha().equals(inputSenha.getText()))
                             {

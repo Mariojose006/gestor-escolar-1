@@ -177,9 +177,7 @@ public class AdmNovoAluno extends javax.swing.JFrame {
         alunoAux.setCpf(jTextField4.getText());
         alunoAux.setTelefone(jTextField5.getText());
         
-        
         for(Aluno a: Escola.alunos){
-            System.out.println(a.getCpf());
            if(a.getCpf().equals(jTextField4.getText())){
                JOptionPane.showInternalMessageDialog(null, "Erro" ,"Erro", JOptionPane.INFORMATION_MESSAGE);
                aux=1;

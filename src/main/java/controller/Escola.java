@@ -166,18 +166,17 @@ public class Escola {
                for(Aluno a: Escola.alunos){ 
                    if(a.getCpf().equals(aluno.getCpf())){
                        notas.addAll(a.getNotas());
-                   
                    }
                
                }
             }
-        
         }
        return notas;
     }
-    public void atualizaArquivo(){
+    public static void atualizaArquivo(){
         String pathArquivoJson = "src\\main\\java\\model\\turmas.json";
         Auxiliar aux = new Auxiliar();
+        aux.turmas.addAll(Escola.turmas);
         Json json = new Json();
         String um = json.escolaToJson(aux);
         arquivos.escreverArquivo(pathArquivoJson,um);

@@ -16,7 +16,8 @@ import javax.swing.table.AbstractTableModel;
 public class AdmAlunoTableModel extends AbstractTableModel {
     private ArrayList<Aluno> dados = new ArrayList<>();
     private String[] colunas = {"id","senha","login","cpf","nome","telefone","tipo"};
-
+    
+    
     @Override
     public String getColumnName(int column) {
         return colunas[column]; //To change body of generated methods, choose Tools | Templates.
@@ -53,6 +54,7 @@ public class AdmAlunoTableModel extends AbstractTableModel {
                 return dados.get(linha).getTelefone();    
             case 6:
                 return dados.get(linha).getTipoUsuário();
+                //dados.get(linha).setNotas(notas);
         }
         
         return null;
@@ -67,5 +69,9 @@ public class AdmAlunoTableModel extends AbstractTableModel {
     public void removeRow(int linha){
         this.dados.remove(linha);
         this.fireTableRowsDeleted(linha, linha);
+    }
+    
+    public ArrayList<Aluno> getAlunos(){
+        return dados;
     }
 }

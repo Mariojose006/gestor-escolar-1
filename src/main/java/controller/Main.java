@@ -63,9 +63,7 @@ public class Main {
 //         
 //          
 //          arquivos.escreverArquivo(pathArquivoJson,um);
-          
-//            aux = json.jsonToEscola(pathArquivoJson);
-//            System.out.println(aux.turmas.size());
+//          
             escola.ler(pathArquivoJson);           
             Login login = new Login();
             login.setVisible(true);
