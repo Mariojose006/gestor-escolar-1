@@ -10,6 +10,7 @@ import controller.Escola;
 import controller.Professor;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import view.adm.AdmInicial;
 import view.aluno.AlunoInicial;
 import view.professor.ProfInicial;
@@ -104,11 +105,14 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //apertou o login 1 carregar os arquivos 2 comparar o login 3 enviar para tela correta 
-        String login = inputLogin.getText();
+        boolean testeLogin = false;
+        try {
+            String login = inputLogin.getText();
         String senha = inputSenha.getText();
         
         if(login.equals("ADM") && senha.equals("ADM"))        
@@ -116,6 +120,7 @@ public class Login extends javax.swing.JFrame {
             this.setVisible(false); 
             AdmInicial telaAdm = new AdmInicial();            
              telaAdm.setVisible(true);
+             testeLogin = true;
             
             
         }else 
@@ -128,6 +133,7 @@ public class Login extends javax.swing.JFrame {
                     Escola.cpfUserLogado = aux.getCpf();
                     AlunoInicial al = new AlunoInicial(); 
                     al.setVisible(true); 
+                    testeLogin = true;
                 }else
                 {
                     
@@ -142,14 +148,21 @@ public class Login extends javax.swing.JFrame {
                                 Escola.cpfUserLogado = aux1.getCpf();
                                 ProfInicial pf = new ProfInicial(); 
                                 pf.setVisible(true); 
+                                testeLogin = true;
                             }
                        else {
                             
                             
                          }
                     }
-            
              
+            if(!testeLogin)
+                JOptionPane.showInternalMessageDialog(null, "Usuario nao encontrado" ,"Ero", JOptionPane.INFORMATION_MESSAGE);
+             
+        }
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(null, "Erro" ,e.getMessage(), JOptionPane.INFORMATION_MESSAGE);
+
         }
               
         
