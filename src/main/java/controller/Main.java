@@ -12,13 +12,16 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 import com.google.gson.Gson;
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
           Json json = new Json();
           Escola escola = new Escola();
           Auxiliar aux = new Auxiliar();
-          String pathArquivoJson = "src\\main\\java\\model\\turmas.json";          
+          String pathArquivoJson = "src\\main\\java\\model\\turmas.json";
+          File file = new File(pathArquivoJson);
+          System.out.println(file.getAbsolutePath());
             escola.ler(pathArquivoJson);           
             Login login = new Login();
             login.setVisible(true);
