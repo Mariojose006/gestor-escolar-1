@@ -4,6 +4,7 @@
     Mário José - 201965507B
 */ 
 package controller;
+import view.Login;
 import com.github.javafaker.Faker;
 import model.*;
 import java.io.FileNotFoundException;
