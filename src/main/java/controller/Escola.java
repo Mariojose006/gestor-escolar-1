@@ -1,9 +1,8 @@
 /*
-    Adrian Machado -  201965001AB   
-    André Reis - 
+    Adrian Machado - 201965001AB
     Mário José - 201965507B
 
-*/ 
+*/   
 package controller;
 
 import java.io.FileNotFoundException;

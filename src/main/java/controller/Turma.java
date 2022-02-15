@@ -1,7 +1,7 @@
 /*
     Adrian Machado - 201965001AB
-    André Reis - 201965511B
     Mário José - 201965507B
+
 */ 
 package controller;
 

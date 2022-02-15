@@ -1,4 +1,8 @@
+/*
+    Adrian Machado - 201965001AB
+    Mário José - 201965507B
 
+*/ 
 package view.adm;
 
 import controller.Aluno;

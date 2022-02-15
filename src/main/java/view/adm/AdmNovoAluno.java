@@ -1,7 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+    Adrian Machado - 201965001AB
+    Mário José - 201965507B
+
+*/ 
 package view.adm;
 
 import controller.Aluno;
